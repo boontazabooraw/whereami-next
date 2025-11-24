@@ -16,7 +16,7 @@ export async function GET(req: NextRequest) {
   }
 
   try {
-    const res = await fetch(`${apiUrl}${apiKey}&ip${ip}`);
+    const res = await fetch(`${apiUrl}${apiKey}&ip=${ip}`);
     const data = await res.json();
     return NextResponse.json(data);
   } catch (err) {

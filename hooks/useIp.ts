@@ -9,11 +9,12 @@ interface DataInterface {
 
 export function useIp() {
   const { userIP } = useUserIP();
+  const userIPObj = userIP?.ip;
 
   const [data, setData] = useState<DataInterface | null>(null);
 
   useEffect(() => {
-    fetch(`/api/ipinfo?ip=${userIP}`)
+    fetch(`/api/ipinfo?ip=${userIPObj}`)
       .then((res) => {
         return res.json();
       })
@@ -23,7 +24,7 @@ export function useIp() {
       .catch((err) => {
         console.error("Failed to fetch data from API: ", err);
       });
-  }, [userIP]);
+  }, [userIPObj]);
 
   return { data };
 }
