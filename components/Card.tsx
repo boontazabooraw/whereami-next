@@ -10,6 +10,7 @@ export default function Card() {
   return (
     <div>
       <h1>{userIP?.ip}</h1>
+      <h1>{data?.ip}</h1>
       <h1>{data?.country_name}</h1>
       {!data?.is_proxy ? (
         <h1>You are not protected</h1>

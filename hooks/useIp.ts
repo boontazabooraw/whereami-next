@@ -13,7 +13,7 @@ export function useIp() {
   const [data, setData] = useState<DataInterface | null>(null);
 
   useEffect(() => {
-    fetch(`/api/ipinfo/?ip=${userIP}`)
+    fetch(`/api/ipinfo?ip=${userIP}`)
       .then((res) => {
         return res.json();
       })
